@@ -3,20 +3,20 @@
 
 import frappe
 from frappe.permissions import add_permission, update_permission_property
-from erpnext.regional.saudi_arabia.wizard.operations.setup_ksa_vat_setting import create_ksa_vat_setting
+from erpnext_ksa.erpnext_ksa.wizard.operations.setup_ksa_vat_setting import create_ksa_vat_setting
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
-def setup(company=None, patch=True):
+def after_install():
 	add_print_formats()
 	add_permissions()
 	make_custom_fields()
 
 def add_print_formats():
-	frappe.reload_doc("regional", "print_format", "detailed_tax_invoice", force=True)
-	frappe.reload_doc("regional", "print_format", "simplified_tax_invoice", force=True)
-	frappe.reload_doc("regional", "print_format", "tax_invoice", force=True)
-	frappe.reload_doc("regional", "print_format", "ksa_vat_invoice", force=True)
-	frappe.reload_doc("regional", "print_format", "ksa_pos_invoice", force=True)
+	frappe.reload_doc("erpnext_ksa", "print_format", "detailed_tax_invoice", force=True)
+	frappe.reload_doc("erpnext_ksa", "print_format", "simplified_tax_invoice", force=True)
+	frappe.reload_doc("erpnext_ksa", "print_format", "tax_invoice", force=True)
+	frappe.reload_doc("erpnext_ksa", "print_format", "ksa_vat_invoice", force=True)
+	frappe.reload_doc("erpnext_ksa", "print_format", "ksa_pos_invoice", force=True)
 
 	for d in ('Simplified Tax Invoice', 'Detailed Tax Invoice', 'Tax Invoice', 'KSA VAT Invoice', 'KSA POS Invoice'):
 		frappe.db.set_value("Print Format", d, "disabled", 0)

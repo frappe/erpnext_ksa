@@ -68,6 +68,8 @@ app_license = "MIT"
 # before_install = "erpnext_ksa.install.before_install"
 # after_install = "erpnext_ksa.install.after_install"
 
+after_install = "erpnext_ksa.install.after_install"
+
 # Uninstallation
 # ------------
 
@@ -111,6 +113,19 @@ app_license = "MIT"
 # 		"on_trash": "method"
 #	}
 # }
+
+doc_events = {
+	"Sales Invoice": {
+		"on_submit": "erpnext_ksa.utils.create_qr_code",
+		"on_cancel": "erpnext_ksa.utils.delete_qr_code_file"
+	},
+	"POS Invoice": {
+		"on_submit": "erpnext_ksa.utils.create_qr_code"
+	},
+	"Company": {
+		"on_trash": "erpnext_ksa.utils.delete_vat_settings_for_company"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -188,3 +203,8 @@ app_license = "MIT"
 # 	"erpnext_ksa.auth.validate"
 # ]
 
+regional_overrides = {
+	'Saudi Arabia': {
+		'erpnext.controllers.taxes_and_totals.update_itemised_tax_data': 'erpnext_ksa.utils.update_itemised_tax_data'
+	}
+}
