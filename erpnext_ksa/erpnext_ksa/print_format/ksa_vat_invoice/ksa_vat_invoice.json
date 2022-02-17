@@ -1,7 +1,7 @@
 {
  "absolute_value": 0,
  "align_labels_right": 0,
- "creation": "2021-10-29 22:46:26.039023",
+ "creation": "2022-02-16 22:29:40.269975",
  "css": ".qr-code{\n    float:right;\n}\n\n.invoice-heading {\n  margin: 0;\n}\n\n.ksa-invoice-table {\n  border: 1px solid #888a8e;\n  border-collapse: collapse;\n  width: 100%;\n  margin: 20px 0;\n  font-size: 16px;\n}\n\n.ksa-invoice-table.two-columns td:nth-child(2) {\n  direction: rtl;\n}\n\n.ksa-invoice-table th {\n  border: 1px solid #888a8e;\n  max-width: 50%;\n  padding: 8px;\n}\n\n.ksa-invoice-table td {\n  padding: 5px;\n  border: 1px solid #888a8e;\n  max-width: 50%;\n}\n\n.ksa-invoice-table thead,\n.ksa-invoice-table tfoot {\n  text-transform: uppercase;\n}\n\n.qr-rtl {\n  direction: rtl;\n}\n\n.qr-flex{\n    display: flex;\n    justify-content: space-between;\n}",
  "custom_format": 1,
  "default_print_language": "en",
@@ -17,7 +17,7 @@
  "margin_left": 15.0,
  "margin_right": 15.0,
  "margin_top": 15.0,
- "modified": "2021-12-07 13:43:38.018593",
+ "modified": "2022-02-16 20:27:25.836499",
  "modified_by": "Administrator",
  "module": "ERPNext KSA",
  "name": "KSA VAT Invoice",
